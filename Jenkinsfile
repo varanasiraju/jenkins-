@@ -1,6 +1,9 @@
 pipeline {
     agent any 
     stages {
+	stage('SCM') {
+	  git 'https://github.com/varanasiraju/jenkins-.git'
+   }
        stage('Build') {
            steps {
                sh 'mvn clean package'
