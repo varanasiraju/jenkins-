@@ -4,7 +4,7 @@ pipeline {
        stage('Build') {
            steps {
                sh 'mvn clean package'
-			   sh 'docker image build -t raju ./dockerfile' 
+			   sh 'docker.build -t raju ./dockerfile' 
            }
 		}
     }  
