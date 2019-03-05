@@ -3,10 +3,13 @@ pipeline {
     stages {
        stage('Build') {
            steps {
-               sh 'mvn clean package'
-			   sh 'docker.build -t raju ./dockerfile' 
+               sh 'mvn clean package' 
            }
 		}
+		stage ("Build image") {
+
+        myImg = docker.build 'my-image:snapshot'
+    }
     }  
 }
 
