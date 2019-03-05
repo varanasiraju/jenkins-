@@ -1,20 +1,14 @@
-node {
+pipeline {
+    agent any 
+    stages {
+       stage('Build') {
+           steps {
+               sh 'mvn clean package'
+               sh 'sudo docker build -f example.df 
+			   sh 'sudo docker container run -it -d -p 8888:8080 tomcat'
+           }
+       }     
 
-   stage('SCM') {
-      // git clone
-	  git 'https://github.com/GitPracticeRepo/spring-petclinic.git'
-   }
-   
-   stage ('build the packages') {
-      // mvn package
-	  sh 'mvn package'
-   }
-
-   
-   
-   stage ('archival') {
-     // archiving artifacts
-	 archive 'target/*.jar'
-   }
-
+    }  
 }
+
