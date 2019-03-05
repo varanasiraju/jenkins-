@@ -2,14 +2,13 @@ pipeline {
     agent any 
     stages {
        stage('Build') {
-           step {
                sh 'mvn clean package'
            }
-		   step {
+		stage('docker build'){
 		   sh label: '', script: 'docker image build -t docker .'
 		   }
        }     
 
     }  
-}
+
 
