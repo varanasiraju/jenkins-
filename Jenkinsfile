@@ -4,8 +4,7 @@ pipeline {
        stage('Build') {
            steps {
                sh 'mvn clean package'
-               sh 'sudo docker build -f example.df .      
- 
+               sh 'docker image build -t docker .      
            }
        }     
 
