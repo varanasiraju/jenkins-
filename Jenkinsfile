@@ -4,7 +4,7 @@ pipeline {
        stage('Build') {
            steps {
                sh 'mvn clean package'
-			   sh label: '', script: 'docker image build -t raju .'
+			   sh label: '', script: 'sudo docker image build -t raju .'
            }
 		}
 		
