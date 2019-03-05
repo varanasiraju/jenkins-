@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage ("Build image") {
 
-        myImg = docker.build 'my-image:snapshot'
+        dockerfile = docker.build 'my-image:snapshot'
     }
     }  
 }
