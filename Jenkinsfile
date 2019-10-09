@@ -4,7 +4,7 @@ pipeline {
         stage ('package stage') {
             steps {
                 sh 'mvn clean package'
-		sh label: '', script: 'java -jar target/*.jar &'
+		sh label: '', script: 'java -jar target/*.jar'
             }
         }
     }
